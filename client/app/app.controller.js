@@ -1,7 +1,10 @@
-class StuController {
+class AppController {
   constructor() {
-    this.name = 'navbar';
+    "ngInject";
+    this.name = 'foo bar';
+    console.log('In AppController');
   }
+
 }
 
-export default StuController;
+export default AppController;
