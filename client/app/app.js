@@ -5,9 +5,8 @@ import 'angular-new-router';
 
 import Common from './common/common';
 import Components from './components/components';
-//import config from './app.config';
 import AppComponent from './app.component';
-//import MainController from './main.controller';
+import MainController from './main.controller';
 
 
 angular.module('app', [
@@ -25,9 +24,9 @@ angular.module('app', [
       return 'app/components/' + name + '/' + name + '.html';
     });
 
+    // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
+    // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
-
-    //$locationProvider.html5Mode(true);
 
     // $mdIconProvider
     //   .iconSet('action', './assets/svg/action-icons.svg', 24)
@@ -37,18 +36,3 @@ angular.module('app', [
     //   .iconSet('social', './assets/svg/social-icons.svg', 24)
     //   .defaultIconSet('./assets/svg/action-icons.svg');
   }]);
-
-
-function MainController($router){
-  console.log("Inline MainController");
-  console.log($router);
-
-  $router.config([
-    { path: '/home', component: 'home' }
-  ]);
-}
-// class AppController{
-//   constructor() {
-//     console.log("Yahooo!");
-//   }
-// }
