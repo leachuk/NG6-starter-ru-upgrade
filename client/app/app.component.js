@@ -7,7 +7,10 @@ let appComponent = {
   restrict: 'E',
   bindings: {},
   template,
-  controller
+  controller,
+  $routeConfig: [
+    { path: '/home', component: 'home', name: 'Home' }
+  ]
 };
 
 export default appComponent;

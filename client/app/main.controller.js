@@ -1,15 +1,13 @@
 class MainController {
-  constructor($router) {
+  constructor() {
     "ngInject";
-    this.name = 'main bar';
-    this.$router = $router;
+    this.name = 'Main';
 
     console.log('In MainController');
+  }
 
-    this.$router.config([
-      { path: '/', redirectTo: '/home' },
-      { path: '/home', component: 'home' }
-    ]);
+  changeName() {
+    this.name = 'Sample Component Output';
   }
 
   initApp(){

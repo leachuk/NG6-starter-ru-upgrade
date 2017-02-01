@@ -1,29 +1,22 @@
 import angular from 'angular';
 
-import uiRouter from 'angular-ui-router';
-import 'angular-new-router';
+import '@angular/router/angular1/angular_1_router.js';
 
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import MainController from './main.controller';
 
-
 angular.module('app', [
-    'ngNewRouter',
+    'ngComponentRouter',
     Common,
     Components
-  ])
+]).value('$routerRootComponent', 'app')
   .component('app', AppComponent)
-  .controller('AppController', ['$router', MainController])
-  .config(['$componentLoaderProvider', '$locationProvider', function($componentLoaderProvider, $locationProvider){
+  .controller('AppController', [MainController])
+  .config(['$locationProvider', function($locationProvider){
     console.log('Inline config');
-    console.log($componentLoaderProvider);
-
-    $componentLoaderProvider.setTemplateMapping(function (name) {
-      return 'app/components/' + name + '/' + name + '.html';
-    });
-
+    console.log($locationProvider);
     // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');

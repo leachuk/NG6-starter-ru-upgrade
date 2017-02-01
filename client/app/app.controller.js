@@ -1,8 +1,10 @@
 class AppController {
-  constructor() {
+  constructor($routerRootComponent) {
     "ngInject";
     this.name = 'foo bar';
     console.log('In AppController');
+
+    console.log($routerRootComponent);
   }
 }
 
