@@ -9,7 +9,8 @@ let appComponent = {
   template,
   controller,
   $routeConfig: [
-    { path: '/home', component: 'home', name: 'Home' }
+    { path: '/home', component: 'home', name: 'Home', useAsDefault: true },
+    { path: '/user', component: 'userlanding', name: 'UserLanding' }
   ]
 };
 
