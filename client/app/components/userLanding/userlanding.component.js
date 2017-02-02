@@ -7,8 +7,11 @@ let userLandingComponent = {
   template,
   controller,
   controllerAs: 'userlanding',
-  $canActivate: function() {
+  $canActivate: function($rootRouter) {
+    "ngInject";
     console.log('In userLandingComponent > canActivate [true]');
+    console.log($rootRouter);
+    //$rootRouter.navigate(['Home']); //redirect to /home route
     return true;
   }
 };
