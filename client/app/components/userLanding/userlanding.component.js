@@ -6,7 +6,11 @@ let userLandingComponent = {
   bindings: {},
   template,
   controller,
-  controllerAs: 'userlanding'
+  controllerAs: 'userlanding',
+  $canActivate: function() {
+    console.log('In userLandingComponent > canActivate [true]');
+    return true;
+  }
 };
 
 export default userLandingComponent;
